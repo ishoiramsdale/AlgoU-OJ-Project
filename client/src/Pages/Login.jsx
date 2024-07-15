@@ -1,14 +1,16 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 export default function Login() {
 
- const {data, setData} = useState({
+ const [data, setData] = useState({
    email:'',
    password:'',
  })
 
  const loginUser = (e) => {
    e.preventDefault();
+   axios.get('/')
  }
 
   return (
