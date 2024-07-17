@@ -8,6 +8,10 @@ import axios from 'axios';
 import {Toaster} from 'react-hot-toast'
 import { UserContextProvider} from '../context/userContext';
 import Dashboard from './Pages/Dashboard';
+import ProblemList from './Pages/ProblemList';
+import ProblemDetail from './Pages/ProblemDetail';
+import CreateProblem from './Pages/CreateProblem';
+import EditProblem from './Pages/EditProblem';
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = true
@@ -22,6 +26,10 @@ function App() {
       <Route path='/register' element={<Register />} />
       <Route path='/login' element={<Login />} />
       <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/problems' element={<ProblemList />} />
+      <Route path='/problems/:id' element={<ProblemDetail />} />
+      <Route path='/problems/create' element={<CreateProblem />} />
+      <Route path='/problems/edit/:id' element={<EditProblem />} />
      </Routes>
     </UserContextProvider>
   );
