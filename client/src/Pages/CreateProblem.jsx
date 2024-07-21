@@ -23,7 +23,7 @@ const CreateProblem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/problems', formData);
+      await axios.post('/problems', formData);
       navigate('/problems');
     } catch (error) {
       console.error('Error creating problem:', error);

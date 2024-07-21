@@ -16,7 +16,7 @@ const EditProblem = () => {
   useEffect(() => {
     const fetchProblem = async () => {
         try {
-          const response = await axios.get(`/api/problems/${id}`);
+          const response = await axios.get(`/problems/${id}`);
           setFormData({
             title: response.data.title,
             description: response.data.description,
@@ -40,7 +40,7 @@ const EditProblem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`/api/problems/${id}`, formData);
+      await axios.put(`/problems/${id}`, formData);
       // navigate to problem list on success
       navigate('/problems');
     } catch (error) {

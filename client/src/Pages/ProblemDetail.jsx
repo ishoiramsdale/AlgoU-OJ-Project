@@ -9,7 +9,7 @@ const ProblemDetail = () => {
   useEffect(() => {
     const fetchProblem = async () => {
         try {
-          const response = await axios.get(`/api/problems/${id}`);
+          const response = await axios.get(`/problems/${id}`);
           setProblem(response.data);
         } catch (error) {
           console.error('Error fetching problem:', error);
