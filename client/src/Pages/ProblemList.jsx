@@ -19,6 +19,15 @@ const ProblemList = () => {
     }
   };
 
+  const handleDelete = async (problemId) => {
+    try {
+      await axios.delete(`/problems/${problemId}`);
+      setProblems(problems.filter(problem => problem._id !== problemId));
+    } catch (error) {
+      console.error('Error deleting problem:', error);
+    }
+  };
+
   return (
     <div>
       <h2>Problem List</h2>
@@ -27,6 +36,7 @@ const ProblemList = () => {
           <li key={problem._id}>
             <Link to={`/problems/${problem._id}`}>{problem.title}</Link>
             <Link to={`/problems/edit/${problem._id}`}>Edit</Link>
+            <button onClick={() => handleDelete(problem._id)}>Delete</button>
           </li>
         ))}
       </ul>
