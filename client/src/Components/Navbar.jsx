@@ -1,11 +1,37 @@
-import {Link} from 'react-router-dom'
+import { useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { UserContext } from '../../context/userContext';
 
-export default function Navbar() {
+const Navbar = () => {
+  const { user, setUser } = useContext(UserContext);
+  const location = useLocation();
+
+  const authPaths = ['/', '/login', '/register'];
+
+  const handleLogout = () => {
+    setUser(null);
+    window.location.href = '/';
+  };
+
   return (
     <nav>
-      <Link to='/'>Home</Link>
-      <Link to='/register'>Register</Link>
-      <Link to='/Login'>Login</Link>
+      <ul>
+        {authPaths.includes(location.pathname) && (
+          <>
+            {user && (
+              <>
+                  <Link to="/register">Register</Link>
+                  <Link to="/login">Login</Link>
+              </>
+            )}
+          </>
+        )}
+        {user && location.pathname === '/dashboard' && (
+            <button onClick={handleLogout}>Logout</button>
+        )}
+      </ul>
     </nav>
-  )
-}
+  );
+};
+
+export default Navbar;

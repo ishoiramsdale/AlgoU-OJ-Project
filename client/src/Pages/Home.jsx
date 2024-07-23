@@ -3,7 +3,7 @@ import '../App.css'
 
 export default function Home() {
   return (
-    <div className="home-container">
+    <div>
       <h1>Welcome to AlgoU Online Judge</h1>
       <p>Your platform for practicing and improving your algorithmic skills.</p>
     </div>

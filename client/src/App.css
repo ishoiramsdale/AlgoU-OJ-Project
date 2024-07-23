@@ -1,7 +1,12 @@
 #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
   background-color: #f0f0f0;
   color: #333;
@@ -23,30 +28,3 @@ nav a:hover {
   color: #0056b3;
 }
 
-.dashboard {
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
-  max-width: 600px;
-}
-
-.dashboard h1 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.home-container {
-  text-align: center;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
-  max-width: 600px;
-}
-
-.home-container h1 {
-  color: #333;
-}
