@@ -12,4 +12,7 @@ router.put('/problems/:id', problemControllers.updateProblemById);
 
 router.delete('/problems/:id', problemControllers.deleteProblemById);
 
+router.get('/problems/difficulty/:level', problemControllers.getProblemsByDifficulty);
+router.get('/leaderboard', problemControllers.getLeaderboard);
+
 module.exports = router;

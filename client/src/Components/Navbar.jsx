@@ -3,31 +3,35 @@ import { Link, useLocation } from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
 
 const Navbar = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const location = useLocation();
 
   const authPaths = ['/', '/login', '/register'];
-
-  const handleLogout = () => {
-    setUser(null);
-    window.location.href = '/';
-  };
 
   return (
     <nav>
       <ul>
         {authPaths.includes(location.pathname) && (
           <>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
             {user && (
               <>
-                  <Link to="/register">Register</Link>
+                <li>
                   <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
               </>
             )}
           </>
         )}
         {user && location.pathname === '/dashboard' && (
-            <button onClick={handleLogout}>Logout</button>
+          <li>
+            AlgoU
+          </li>
         )}
       </ul>
     </nav>

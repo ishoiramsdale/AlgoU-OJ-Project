@@ -6,6 +6,8 @@ import Register from './Pages/Register';
 import Login from './Pages/Login';
 import axios from 'axios';
 import {Toaster} from 'react-hot-toast'
+import Profile from './Pages/Profile';
+import Submissions from './Pages/Submissions';
 import { UserContextProvider} from '../context/userContext';
 import Dashboard from './Pages/Dashboard';
 import ProblemList from './Pages/ProblemList';
@@ -30,6 +32,8 @@ function App() {
       <Route path='/problems/:id' element={<ProblemDetail />} />
       <Route path='/problems/create' element={<CreateProblem />} />
       <Route path='/problems/edit/:id' element={<EditProblem />} />
+      <Route path='/profile' element={<Profile />} />
+      <Route path='/submissions' element={<Submissions />} />
      </Routes>
     </UserContextProvider>
   );
