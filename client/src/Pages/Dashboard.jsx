@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Dashboard = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [problems, setProblems] = useState({ easy: [], medium: [], hard: [] });
   const [leaderboard, setLeaderboard] = useState([]);
 
@@ -35,20 +35,10 @@ const Dashboard = () => {
     fetchLeaderboard();
   }, []);
 
-  const handleLogout = () => {
-    setUser(null);
-    window.location.href = '/';
-  };
-
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
         <h1>Dashboard</h1>
-        <div className="user-actions">
-          <Link to="/profile">Profile</Link>
-          <Link to="/submissions">Submissions</Link>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
       </header>
       <div className="dashboard-content">
         <h2>Welcome to the Dashboard!</h2>

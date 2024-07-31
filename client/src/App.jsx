@@ -8,7 +8,7 @@ import axios from 'axios';
 import {Toaster} from 'react-hot-toast'
 import Profile from './Pages/Profile';
 import Submissions from './Pages/Submissions';
-import { UserContextProvider} from '../context/userContext';
+import { UserProvider} from '../context/userContext';
 import Dashboard from './Pages/Dashboard';
 import ProblemList from './Pages/ProblemList';
 import ProblemDetail from './Pages/ProblemDetail';
@@ -20,7 +20,7 @@ axios.defaults.withCredentials = true
 
 function App() {
   return (
-    <UserContextProvider>
+    <UserProvider>
      <Navbar />
      <Toaster position='bottom-right' toastOptions={{duration: 2000}} />
      <Routes>
@@ -35,7 +35,7 @@ function App() {
       <Route path='/profile' element={<Profile />} />
       <Route path='/submissions' element={<Submissions />} />
      </Routes>
-    </UserContextProvider>
+    </UserProvider>
   );
 }
 

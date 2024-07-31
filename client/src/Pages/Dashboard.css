@@ -52,13 +52,15 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem;
     background-color: #007BFF;
     color: #fff;
   }
   
   .dashboard-header h1 {
-    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .user-actions {
